@@ -4,4 +4,4 @@
 
 This is a test repo by Your's Truly.
 
-  - Implemented HVAC Custom code implemented in HVAC.ino
+- Implemented HVAC Custom code implemented in HVAC.ino
