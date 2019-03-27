@@ -1,4 +1,4 @@
-int coolPin=11;
+int coolPin=11
 int heatPin=10;
 int powr=12;
 int off=13;
