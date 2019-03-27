@@ -32,5 +32,5 @@ env:
   global:
     - IDE_VERSION=1.8.9
   matrix:
-    - BOARD=arduino:avr:uno IDE_VERSION=1.8.8
+    - BOARD=arduino:avr:uno IDE_VERSION=1.8.9
     - BOARD=arduino:avr:uno
