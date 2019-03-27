@@ -194,11 +194,19 @@ void loop()
   
   }
   
-  //if(~fanspeed_final)
-    //analogWrite(fanblower,0);
-  //else{
-    //if (fanspeed==3)
-  //}
+  if(fanspeed_final==0){
+    analogWrite(fanblower,0);
+  }
+  else{
+    if (fanspeed_final==3)
+      analogWrite(fanblower,255);
+    else if (fanspeed_final==2)
+      analogWrite(fanblower,168);
+    else if (fanspeed_final==1)
+      analogWrite(fanblower,84);
+    else
+      analogWrite(fanblower,0); 
+  }
   
   
   
