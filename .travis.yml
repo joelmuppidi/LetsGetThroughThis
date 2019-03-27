@@ -17,12 +17,11 @@ before_install:
   - rm arduino-$ARD_VER-linux64.tar.xz
   
 install:
-  - ln -s $PWD /usr/local/share/arduino/libraries/MicroDebug
+  - ln -s $PWD /usr/local/share/arduino/libraries/HVAC
   
 script:
-  - arduino --verify --board ${BOARD} $PWD/examples/FormattingSerialDebug/FormattingSerialDebug.ino
-  - arduino --verify --board ${BOARD} $PWD/examples/LedDebug/LedDebug.ino
-  - arduino --verify --board ${BOARD} $PWD/examples/SerialDebug/SerialDebug.ino
+  - arduino --verify --board ${BOARD} $PWD/
+ 
   
 notifications:
   email:
