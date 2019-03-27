@@ -1,7 +1,7 @@
 language: c
 
 before_install:
-  - ARD_VER="1.8.0"
+  - ARD_VER="1.8.9"
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16"
   - sleep 5
   - export DISPLAY=:1.0
@@ -20,7 +20,7 @@ install:
   - ln -s $PWD /usr/local/share/arduino/libraries/HVAC
   
 script:
-  - arduino --verify --board ${BOARD} $PWD/
+  - arduino --verify --board ${BOARD} $PWD/Arduino/HVAC/HVAC_Arduino.ino
  
   
 notifications:
@@ -30,12 +30,7 @@ notifications:
     
 env:
   global:
-    - IDE_VERSION=1.6.6
+    - IDE_VERSION=1.8.9
   matrix:
     - BOARD=arduino:avr:uno IDE_VERSION=1.8.8
     - BOARD=arduino:avr:uno
-    - BOARD=arduino:avr:nano:cpu=atmega168
-    - BOARD=arduino:avr:nano:cpu=atmega328
-    - BOARD=arduino:avr:mega:cpu=atmega1280
-    - BOARD=arduino:avr:mega:cpu=atmega2560
-    - BOARD=arduino:avr:leonardo
