@@ -52,38 +52,6 @@ void loop()
   set_temp_value=set_temp(set_temp_pin);
   
   switch(automan_value){
-    case 0:
-     if(fanspeed_value_m){
-       if (abs(ambient_temp-set_temp_value)<1) //fan only
-      		power_ac=0;
-    	else if(ambient_temp>set_temp_value){   //cooler
-      		power_ac=1;
-      		cooler_heater=0;
-          if(sunload_value<2){
-        	set_ac_intensity=0;
-          }
-          else{
-        	set_ac_intensity=1;
-          }
-        }
-    	else if (ambient_temp<set_temp_value){  //heater
-      		power_ac=1;
-      		cooler_heater=1;
-          if(sunload_value<2){
-        	set_ac_intensity=1;
-          }
-          else{
-        	set_ac_intensity=0;
-          }
-        }
-      }
-     else{
-        power_ac=0;
-      
-      }
-     fanspeed_final=fanspeed_value_m;
-    	break;
-          
     case 1:
         if (abs(ambient_temp-set_temp_value)<1){ //fan only
       		power_ac=0;
@@ -155,6 +123,39 @@ void loop()
         }
     fanspeed_final=fanspeed_value_a;
     	break;
+      
+    default:
+     if(fanspeed_value_m){
+       if (abs(ambient_temp-set_temp_value)<1) //fan only
+      		power_ac=0;
+    	else if(ambient_temp>set_temp_value){   //cooler
+      		power_ac=1;
+      		cooler_heater=0;
+          if(sunload_value<2){
+        	set_ac_intensity=0;
+          }
+          else{
+        	set_ac_intensity=1;
+          }
+        }
+    	else if (ambient_temp<set_temp_value){  //heater
+      		power_ac=1;
+      		cooler_heater=1;
+          if(sunload_value<2){
+        	set_ac_intensity=1;
+          }
+          else{
+        	set_ac_intensity=0;
+          }
+        }
+      }
+     else{
+        power_ac=0;
+      
+      }
+     fanspeed_final=fanspeed_value_m;
+    	break;
+          
     }
   
   
