@@ -2,6 +2,8 @@ int coolPin=11;
 int heatPin=10;
 int powr=12;
 int off=13;
+int ac_intensity=9;
+
 
 int fanblower=6;
 
@@ -208,6 +210,11 @@ void loop()
     else
       analogWrite(fanblower,0); 
   }
+  
+  if(set_ac_intensity)
+    analogWrite(ac_intensity,1);
+  else
+    analogWrite(ac_intensity,0);
   
   
   
